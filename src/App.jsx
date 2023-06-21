@@ -7,6 +7,7 @@ import Administrador from './views/Administrador';
 import Inicio from "./views/Inicio";
 import Error404 from "./views/Error404";
 import Footer from "./common/Footer";
+import PaginaReceta from "./views/Receta/PaginaReceta";
 
 
 
@@ -15,9 +16,7 @@ function App() {
 
   return (
     <>
-    <Nav></Nav>
-    <Administrador></Administrador>
-      
+    <PaginaReceta></PaginaReceta>
     </>
   )
 }
