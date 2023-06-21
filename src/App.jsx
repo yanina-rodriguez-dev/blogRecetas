@@ -7,10 +7,10 @@ import Administrador from './views/Administrador';
 import Inicio from "./views/Inicio";
 import Error404 from "./views/Error404";
 import Footer from "./common/Footer";
-import PaginaReceta from "./views/Receta/PaginaReceta";
 import CrearReceta from "./views/Receta/CrearReceta";
 import EditarReceta from "./views/Receta/EditarReceta";
-
+import PaginaReceta from "./views/Receta/PaginaReceta";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -18,16 +18,17 @@ function App() {
 
   return (
     <>
-    <Nav></Nav>
-    {/* <Inicio></Inicio> */}
-    {/* <Login></Login> */}
-    {/* <Registro></Registro> */}
-    {/* <Error404></Error404> */}
-    {/* <PaginaReceta></PaginaReceta> */}
-    <Administrador></Administrador>
-    {/* <CrearReceta></CrearReceta> */}
-    {/* <EditarReceta></EditarReceta> */}
-    <Footer></Footer>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Inicio></Inicio>}></Route>
+        <Route path="/administrador" element={<Administrador></Administrador>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/detalle-receta" element={<PaginaReceta></PaginaReceta>}></Route>
+        <Route path="/editar-receta" element={<EditarReceta></EditarReceta>}></Route>
+        <Route path="/crear-receta" element={<CrearReceta></CrearReceta>}></Route>
+        <Route path="/registro" element={<Registro></Registro>}></Route>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
