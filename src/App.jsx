@@ -9,10 +9,10 @@ import Inicio from "./views/Inicio";
 function App() {
     return (
         <>
-            <Inicio></Inicio>
-            {/* <Registro></Registro>
             <Nav></Nav>
-            <Login></Login> */}
+            <Inicio></Inicio>
+            <Registro></Registro>
+            <Login></Login>
             <Footer></Footer>
         </>
     );
