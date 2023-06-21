@@ -11,3 +11,9 @@
 .mainSection{
   flex-grow: 1;
 }
+/* Estilos pagina inicio */
+.img_pagina_inicio {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
