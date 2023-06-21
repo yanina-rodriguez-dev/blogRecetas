@@ -16,7 +16,8 @@ function App() {
 
   return (
     <>
-    <PaginaReceta></PaginaReceta>
+    {/* <PaginaReceta></PaginaReceta> */}
+    <Administrador></Administrador>
     </>
   )
 }
