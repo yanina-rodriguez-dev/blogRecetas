@@ -6,11 +6,14 @@ import Nav from "./common/Nav";
 import Footer from "./common/Footer";
 import Error404 from "./views/Error404";
 import Administrador from "./views/Administrador"
+import Inicio from "./views/Inicio";
+
 
 function App() {
     return (
         <>
             <Nav></Nav>
+            <Inicio></Inicio>
            <Administrador></Administrador>
            
             <Footer></Footer>
