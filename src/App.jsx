@@ -9,6 +9,7 @@ import Error404 from "./views/Error404";
 import Footer from "./common/Footer";
 import PaginaReceta from "./views/Receta/PaginaReceta";
 import CrearReceta from "./views/Receta/CrearReceta";
+import EditarReceta from "./views/Receta/EditarReceta";
 
 
 
@@ -19,7 +20,8 @@ function App() {
     <>
     {/* <PaginaReceta></PaginaReceta> */}
     {/* <Administrador></Administrador> */}
-    <CrearReceta></CrearReceta>
+    {/* <CrearReceta></CrearReceta> */}
+    <EditarReceta></EditarReceta>
     </>
   )
 }
