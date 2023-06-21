@@ -17,3 +17,8 @@
   height: 400px;
   object-fit: cover;
 }
+/* Estilos paginaReceta */
+.imgReceta {
+  width: 90%;
+  max-width: 600px;
+}
