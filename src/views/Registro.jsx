@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 
 const Registro = () => {
     return (
-        <section className="my-5">
+        <section className="my-5 mainSection">
             <h1 className="text-center">Registro</h1>
 
             <Container>

@@ -18,10 +18,16 @@ function App() {
 
   return (
     <>
+    <Nav></Nav>
+    {/* <Inicio></Inicio> */}
+    {/* <Login></Login> */}
+    {/* <Registro></Registro> */}
+    {/* <Error404></Error404> */}
     {/* <PaginaReceta></PaginaReceta> */}
-    {/* <Administrador></Administrador> */}
+    <Administrador></Administrador>
     {/* <CrearReceta></CrearReceta> */}
-    <EditarReceta></EditarReceta>
+    {/* <EditarReceta></EditarReceta> */}
+    <Footer></Footer>
     </>
   )
 }
