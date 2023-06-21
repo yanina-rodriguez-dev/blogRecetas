@@ -8,6 +8,7 @@ import Inicio from "./views/Inicio";
 import Error404 from "./views/Error404";
 import Footer from "./common/Footer";
 import PaginaReceta from "./views/Receta/PaginaReceta";
+import CrearReceta from "./views/Receta/CrearReceta";
 
 
 
@@ -17,7 +18,8 @@ function App() {
   return (
     <>
     {/* <PaginaReceta></PaginaReceta> */}
-    <Administrador></Administrador>
+    {/* <Administrador></Administrador> */}
+    <CrearReceta></CrearReceta>
     </>
   )
 }
