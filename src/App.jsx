@@ -4,12 +4,14 @@ import "./App.css";
 import Login from "./views/Login";
 import Nav from "./common/Nav";
 import Footer from "./common/Footer";
+import Error404 from "./views/Error404";
+
 function App() {
     return (
         <>
-            <Registro></Registro>
             <Nav></Nav>
-            <Login></Login>
+           
+            <Error404></Error404>
             <Footer></Footer>
         </>
     );
