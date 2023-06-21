@@ -2,3 +2,12 @@
 .contenedorCentrado{
   border: 1px solid black;
 }
+/* Estilos para acomodar navbar arriba y footer abajo*/
+#root{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.mainSection{
+  flex-grow: 1;
+}
