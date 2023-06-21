@@ -4,12 +4,15 @@ import "./App.css";
 import Login from "./views/Login";
 import Nav from "./common/Nav";
 import Footer from "./common/Footer";
+import Inicio from "./views/Inicio";
+
 function App() {
     return (
         <>
-            <Registro></Registro>
+            <Inicio></Inicio>
+            {/* <Registro></Registro>
             <Nav></Nav>
-            <Login></Login>
+            <Login></Login> */}
             <Footer></Footer>
         </>
     );
