@@ -1,4 +1,5 @@
-import { Container, Row } from "react-bootstrap";
+import { Row } from "react-bootstrap";
+import CardReceta from "./Receta/CardReceta";
 
 const inicio = () => {
     return (
@@ -10,15 +11,17 @@ const inicio = () => {
                     className="img_pagina_inicio"
                 />
             </div>
-            <Container>
-                <article>
+                <article className="container">
                     <h1 className="text-center">Lista de recetas</h1>
                     <hr />
                     <Row>
                         {/* Aqui van los componentes CardReceta */}
+                        <CardReceta></CardReceta>
+                        <CardReceta></CardReceta>
+                        <CardReceta></CardReceta>
+                        <CardReceta></CardReceta>
                     </Row>
                 </article>
-            </Container>
         </section>
     );
 };
