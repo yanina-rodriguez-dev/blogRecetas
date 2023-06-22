@@ -10,9 +10,9 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#features">Administrador</Nav.Link>
-            <Nav.Link href="#pricing">Iniciar Sesion</Nav.Link>
+            <Nav.Link href="#Inicio">Inicio</Nav.Link>
+            <Nav.Link href="#Administrador">Administrador</Nav.Link>
+            <Nav.Link href="#IniciarSesion">Iniciar Sesion</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
