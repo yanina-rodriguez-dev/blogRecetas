@@ -1,2 +1,3 @@
 #BLOG DE RECETAS DE COCINA
-##Practica con React 
+
+json-server --watch db.json
