@@ -2,7 +2,7 @@ import Registro from "./views/Registro";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Login from "./views/Login";
-import Nav from "./common/Nav";
+import Menu from "./common/Menu";
 import Administrador from "./views/Administrador";
 import Inicio from "./views/Inicio";
 import Error404 from "./views/Error404";
@@ -11,12 +11,17 @@ import CrearReceta from "./views/Receta/CrearReceta";
 import EditarReceta from "./views/Receta/EditarReceta";
 import PaginaReceta from "./views/Receta/PaginaReceta";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+
+
 
 function App() {
+  const[usuarioLogueado,setUsuarioLogueado]= useState({});
+
   return (
     <>
       <BrowserRouter>
-        <Nav></Nav>
+        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
         <Routes>
           <Route exact path="/" element={<Inicio></Inicio>}></Route>
           <Route
@@ -24,7 +29,7 @@ function App() {
             path="/administrador"
             element={<Administrador></Administrador>}
           ></Route>
-          <Route exact path="/login" element={<Login></Login>}></Route>
+          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
           <Route
             exact
             path="/detalle-receta"

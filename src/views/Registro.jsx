@@ -8,7 +8,7 @@ const Registro = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors },reset
   } = useForm();
 
   const onSubmit = (data) => {
@@ -89,3 +89,5 @@ const Registro = () => {
 };
 
 export default Registro;
+
+

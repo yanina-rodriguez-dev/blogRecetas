@@ -1,16 +1,35 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
+import { iniciarSesion } from "../helpers/queries";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
-const login = () => {
+const login = (setUsuarioLogueado) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
-  const onSubmit = (usuario) => {
+
+   const navegacion = useNavigate();
+   
+   const onSubmit = (usuario) => {
     console.log(usuario);
+
+    iniciarSesion(usuario).then((respuesta) => {
+      if(respuesta) {
+        sessionStorage.setItem('usuario', JSON.stringify(respuesta));
+       setUsuarioLogueado(respuesta)
+        reset();
+        navegacion('/Administrador')
+      }else{
+        Swal.fire("Error", "El mail o password son incorrectos", "error");
+      }
+    });
+
+   
   };
 
   return (
@@ -36,23 +55,28 @@ const login = () => {
                   },
                 })}
               />
-              <Form.Text className="text-danger">{errors.email?.message}</Form.Text>
+              <Form.Text className="text-danger">
+                {errors.email?.message}
+              </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Clave</Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Ingresar constraseña"
-                {...register('password', {
-                  required:'La clave es obligatoria',
+                {...register("password", {
+                  required: "La clave es obligatoria",
                   pattern: {
-                    value:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/,
-                    message: 'Debe tener al menos 8 caracteres, una letra mayúscula, al menos una letra minúscula, al menos un dígito numérico y puede contener caracteres especiales'
-                  }
-                })
-                }
+                    value:
+                      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/,
+                    message:
+                      "Debe tener al menos 8 caracteres, una letra mayúscula, al menos una letra minúscula, al menos un dígito numérico y puede contener caracteres especiales",
+                  },
+                })}
               />
-              <Form.Text className="text-danger">{errors.password?.message}</Form.Text>
+              <Form.Text className="text-danger">
+                {errors.password?.message}
+              </Form.Text>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Recordar contraseña" />
