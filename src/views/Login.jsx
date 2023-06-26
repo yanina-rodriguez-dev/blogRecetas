@@ -5,7 +5,7 @@ import { iniciarSesion } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-const login = (setUsuarioLogueado) => {
+const Login = ({setUsuarioLogueado}) => {
   const {
     register,
     handleSubmit,
@@ -21,7 +21,7 @@ const login = (setUsuarioLogueado) => {
     iniciarSesion(usuario).then((respuesta) => {
       if(respuesta) {
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
-       setUsuarioLogueado(respuesta)
+       setUsuarioLogueado(respuesta);
         reset();
         navegacion('/Administrador')
       }else{
@@ -91,4 +91,4 @@ const login = (setUsuarioLogueado) => {
   );
 };
 
-export default login;
+export default Login;
