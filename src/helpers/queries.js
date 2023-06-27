@@ -36,6 +36,7 @@ export const obtenerListaRecetas = async () => {
     console.log(error);
   }                 
 };
+
 export const crearReceta = async (receta) => {
   try {
     const respuesta = await fetch(URL_recetas, {
@@ -75,4 +76,14 @@ export const borrarProducto= async (id) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const obtenerReceta = async (id) => {
+  try {
+    const respuesta = await fetch(URL_recetas+ '/' + id);
+    const receta = await respuesta.json();
+     return receta;
+  } catch (error) {
+    console.log(error);
+  }                 
 };
