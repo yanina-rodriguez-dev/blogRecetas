@@ -52,7 +52,18 @@ const CrearReceta = () => {
             controlId="floatingTextarea2"
             label="Descripción de la receta"
           >
-            <Form.Control as="textarea" style={{ height: "150px" }} />
+            <Form.Control
+              as="textarea"
+              style={{ height: "150px" }}
+              {...register("descripcion", {
+                required: "La descripcion de la receta es obligatoria",
+              })}
+            />
+             {errors.descripcion && (
+              <Form.Text className="text-danger">
+                {errors.descripcion.message}
+              </Form.Text>
+            )}
           </FloatingLabel>
 
           <Button variant="primary" type="submit" className="mt-3">

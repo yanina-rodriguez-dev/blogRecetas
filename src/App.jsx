@@ -14,6 +14,7 @@ import RutasAdministrador from "./components/routes/RutasAdministrador";
 
 
 
+
 function App() {
   const usuarioSessionStorage = JSON.parse(sessionStorage.getItem('usuario')) || {}
   const[usuarioLogueado,setUsuarioLogueado]= useState(usuarioSessionStorage);
@@ -39,7 +40,6 @@ function App() {
             path="/detalle-receta"
             element={<PaginaReceta></PaginaReceta>}
           ></Route>
-         
           <Route exact path="/registro" element={<Registro></Registro>}></Route>
           <Route path="*" element={<Error404></Error404>}></Route>
         </Routes>
