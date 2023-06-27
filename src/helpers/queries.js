@@ -66,3 +66,13 @@ export const editarReceta = async (receta, id) => {
   }
 };
 
+export const borrarProducto= async (id) => {
+  try {
+    const respuesta = await fetch(URL_recetas+ '/' + id, {
+      method:"DELETE",
+    });
+    return respuesta; //status de la respuesta 200
+  } catch (error) {
+    console.log(error);
+  }
+};
