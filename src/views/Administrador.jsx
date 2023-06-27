@@ -1,6 +1,6 @@
 import Table from "react-bootstrap/Table";
 import ItemTablaReceta from "./Receta/ItemTablaReceta";
-import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { obtenerListaRecetas } from "../helpers/queries";
 import Swal from "sweetalert2";
@@ -24,11 +24,10 @@ if (respuestaListaRecetas){
         <div className="container mainSection">
             <section className="d-flex justify-content-between align-items-center mt-5">
                 <h1 className=" text-center">Administrar recetas</h1>
-                <Button
-                    className="btn btn-primary"
+                <Link className="btn btn-primary" to='./crear-receta'
                 >
                     Agregar
-                </Button>
+                </Link>
             </section>
             <div className="my-3">
                 <Table responsive striped bordered hover>

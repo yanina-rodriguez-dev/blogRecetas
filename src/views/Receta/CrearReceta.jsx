@@ -1,15 +1,26 @@
 import { Form, Button, FloatingLabel } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearReceta } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
 const CrearReceta = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (nuevaReceta) => {
+    console.log(nuevaReceta);
+    crearReceta(nuevaReceta).then((respuesta)=>{
+      if(respuesta.status ===201){
+    Swal.fire('Producto creado', `La receta ${nuevaReceta.nombreReceta} fue creado correctamente`, 'success');
+    reset();
+      }else{
+        Swal.fire('Ocurrio un error',  `La receta ${nuevaReceta.nombreReceta} no pudo ser creada`, 'error')
+      }
+    });
   };
 
   return (
