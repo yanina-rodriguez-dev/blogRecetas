@@ -1,14 +1,15 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
-import { Link, NavLink, useNavigate} from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
-const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
-const navegacion = useNavigate();
-  const cerrarSesion = () =>{
-    sessionStorage.removeItem('usuario');
+const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
+  const navegacion = useNavigate();
+
+  const cerrarSesion = () => {
+    localStorage.removeItem('usuario'); // Modificado: Remover del localStorage en lugar de sessionStorage
     setUsuarioLogueado({});
-    navegacion('/')
-  }
+    navegacion('/');
+  };
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
@@ -20,12 +21,12 @@ const navegacion = useNavigate();
             <NavLink end className='nav-item nav-link' to='/'>Inicio</NavLink>
             <NavLink end className='nav-item nav-link' to='/Registro'>Registro</NavLink>
             {
-              (usuarioLogueado.nombreUsuario)?
-              <>
-              <NavLink end className='nav-item nav-link' to='/Administrador'>Administrador</NavLink>
-             <Button variant="danger"onClick={cerrarSesion}>Logout</Button>
-              </>:
-            <NavLink end className='nav-item nav-link' to='/login'>Iniciar Sesion</NavLink>
+              (usuarioLogueado.nombreUsuario) ?
+                <>
+                  <NavLink end className='nav-item nav-link' to='/Administrador'>Administrador</NavLink>
+                  <Button variant="danger" onClick={cerrarSesion}>Logout</Button>
+                </> :
+                <NavLink end className='nav-item nav-link' to='/login'>Iniciar Sesion</NavLink>
             }
           </Nav>
         </Navbar.Collapse>
